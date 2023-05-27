@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Currency Converter Home
+        </title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <h1>{{ message }}</h1>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/result" method="POST">
+            <label for="amounttb">Convert: </label>
+            <input type="text" placeholder="Amount" id="amount" name="amount" value={{amount}}>
+            <label for="cur1tb">From: </label>
+            <input type="text" placeholder="currency type abbreviated" id="cur1" name="cur1" value={{cur1}}>
+            <label for="cur2tb">To: </label>
+            <input type="text" placeholder="currency type abbreviated" id="cur2" name="cur2" value={{cur2}}>
+            <input type="submit">
+        </form>
+    </body>
+</html>
